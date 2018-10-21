@@ -21,6 +21,8 @@ public class EzarpenakUI extends JDialog {
 	
 	public void lortuEzarpenak(){
 		List<String[]> emaitzak = EzarpenakKud.getInstantzia().getEzarpenak();
+		
+		this.getContentPane().removeAll();
 		for (String[] ezarpena : emaitzak) {
 			add(new JLabel("User:" + ezarpena[0] + "\tGakoa:" + ezarpena[1] + "\t Balioa:" + ezarpena[2]));
 		}

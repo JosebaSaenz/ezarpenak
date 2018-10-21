@@ -33,7 +33,6 @@ public class EzarpenakKud {
 					emaitza.add(res);
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		
