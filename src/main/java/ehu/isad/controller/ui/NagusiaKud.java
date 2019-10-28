@@ -1,4 +1,4 @@
-package ehu.isad.controller;
+package ehu.isad.controller.ui;
 
 import ehu.isad.Main;
 import javafx.collections.ObservableList;
@@ -12,19 +12,11 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class KautotuKud implements Initializable {
+public class NagusiaKud implements Initializable {
 
   // Reference to the main application.
   private Main mainApp;
 
-  @FXML
-  private ComboBox comboZerbitzua;
-
-  @FXML
-  private TextField txtErabiltzaile;
-
-  @FXML
-  private TextField txtPasahitza;
 
   public void setMainApp(Main main) {
     this.mainApp = main;
@@ -32,20 +24,12 @@ public class KautotuKud implements Initializable {
 
   @FXML
   public void onClick(ActionEvent actionEvent) {
-    System.out.println(txtErabiltzaile.getText() + ":" + txtPasahitza.getText());
-    System.out.println(comboZerbitzua.getValue());
-
-    if ("Flickr".equals(comboZerbitzua.getValue()) &&
-        "juanan".equals(txtErabiltzaile.getText()) &&
-        "pereira".equals(txtPasahitza.getText())) {
-
-      mainApp.mainErakutsi();
-    }
+    mainApp.ezarpenakErakutsi();
   }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    comboZerbitzua.getItems().add(0,"Dropbox");
+
   }
 
 }
