@@ -5,6 +5,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="285.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ehu.isad.controller.ui.NagusiaKud">
    <children>
-      <Button fx:id="kautotuBotoia" layoutX="193.0" layoutY="130.0" mnemonicParsing="false" onAction="#onClick" text="Ezarpenak erakutsi" />
+      <Button fx:id="kautotuBotoia" layoutX="173.0" layoutY="117.0" mnemonicParsing="false" onAction="#onClick" text="Ezarpenak erakutsi" />
    </children>
 </AnchorPane>
