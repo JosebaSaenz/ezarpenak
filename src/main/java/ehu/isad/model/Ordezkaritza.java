@@ -1,23 +1,36 @@
-package ehu.isad.model;
+package main.java.ehu.isad.model;
 
-public class Ezarpena {
+public class Ordezkaritza {
 
-    private Integer userid;
-    private String key;
-    private String value;
+    private String herrialdea;
+    private String artista;
+    private String abestia;
 
-    public Ezarpena(Integer userid, String key, String value) {
-        this.userid = userid;
-        this.key = key;
-        this.value = value;
+    public Ordezkaritza(String herrialdea, String artista, String abestia) {
+        this.herrialdea = herrialdea;
+        this.artista = artista;
+        this.abestia = abestia;
     }
+
+    public String getHerrialdea() {
+        return herrialdea;
+    }
+
+    public String getArtista() {
+        return artista;
+    }
+
+    public String getAbestia() {
+        return abestia;
+    }
+
 
     @Override
     public String toString() {
-        return "Ezarpena{" +
-                "userid=" + userid +
-                ", key='" + key + '\'' +
-                ", value='" + value + '\'' +
+        return "Ordezkaritza{" +
+                "herrialdea=" + herrialdea +
+                ", artista='" + artista + '\'' +
+                ", abestia='" + abestia + '\'' +
                 '}' + "\n";
     }
 }
