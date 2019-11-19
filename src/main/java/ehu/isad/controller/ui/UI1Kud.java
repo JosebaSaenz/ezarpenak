@@ -1,18 +1,15 @@
-package ehu.isad.controller.ui;
+package main.java.ehu.isad.controller.ui;
 
-import ehu.isad.Main;
-import javafx.collections.ObservableList;
+import javafx.scene.control.ComboBox;
+import main.java.ehu.isad.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NagusiaKud implements Initializable {
+public class UI1Kud implements Initializable {
 
   // Reference to the main application.
   private Main mainApp;
@@ -24,7 +21,7 @@ public class NagusiaKud implements Initializable {
 
   @FXML
   public void onClick(ActionEvent actionEvent) {
-    mainApp.ezarpenakErakutsi();
+    mainApp.UI2Erakutsi();
   }
 
   @Override

@@ -1,28 +1,22 @@
-package ehu.isad.controller.ui;
+package main.java.ehu.isad.controller.ui;
 
-import ehu.isad.Main;
-import ehu.isad.controller.db.EzarpenakDBKud;
-import ehu.isad.model.Ezarpena;
-import javafx.application.Platform;
+import main.java.ehu.isad.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
-public class EzarpenakKud implements Initializable {
+public class UI2Kud implements Initializable {
 
   // Reference to the main application.
   private Main mainApp;
 
   @FXML
-  private TextArea ezarpenak;
+  private ComboBox comboBox;
+
 
   public void setMainApp(Main main) {
     this.mainApp = mainApp;
@@ -30,17 +24,30 @@ public class EzarpenakKud implements Initializable {
 
   @FXML
   public void onClick(ActionEvent actionEvent) {
+    String aukera = (String) comboBox.getValue();
+    /*if () { // TODO Puntuak jada banatu ditu (errorea)
+        mainApp.UI3Erakutsi(aukera);
+    }
+    else{ // TODO Bozkaketa lehioa
+        mainApp.UI4Erakutsi(aukera);
+    }*/
+  }
 
+  public void comboboxHasieratu() {
+    comboBox.getItems().add("Albania");
+    comboBox.getItems().add("Alemania");
+    comboBox.getItems().add("Austria");
+    comboBox.getItems().add("Azerbaiyan");
+    comboBox.getItems().add("Belgika");
+    comboBox.getItems().add("Bielorrusia");
+    comboBox.getItems().add("Bosnia");
+    comboBox.getItems().add("Bulgaria");
+    comboBox.getItems().add("Chipre");
+    comboBox.setValue("Albania");
   }
 
   @Override
-  public void initialize(URL location, ResourceBundle resources) {
+  public void initialize(URL url, ResourceBundle resourceBundle) {
 
   }
-
-  public void getEzarpenak(){
-    List<Ezarpena> zerrenda = EzarpenakDBKud.getInstantzia().lortuEzarpenak();
-    ezarpenak.setText(zerrenda.toString());
-  }
-
 }

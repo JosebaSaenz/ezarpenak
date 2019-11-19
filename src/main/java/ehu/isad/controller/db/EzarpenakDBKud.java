@@ -1,11 +1,8 @@
 package ehu.isad.controller.db;
 
-import ehu.isad.model.Ezarpena;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class EzarpenakDBKud {
@@ -20,8 +17,8 @@ public class EzarpenakDBKud {
 
     private EzarpenakDBKud(){}
 
-    public List<Ezarpena> lortuEzarpenak(){
-        List<Ezarpena> emaitza = new ArrayList<>();
+    public List<ehu.isad.model.Ordezkaritza> lortuEzarpenak(){
+        List<ehu.isad.model.Ordezkaritza> emaitza = new ArrayList<>();
         try {
             //Declare a SELECT statement
             String selectStmt = "SELECT * FROM properties";
@@ -34,7 +31,7 @@ public class EzarpenakDBKud {
                 String keyLag = rs.getString("key");
                 String valueLag = rs.getString("value");
 
-                emaitza.add(new Ezarpena(useridLag,keyLag,valueLag));
+                emaitza.add(new ehu.isad.model.Ordezkaritza(useridLag,keyLag,valueLag));
             }
 
         } catch (SQLException ex) {
