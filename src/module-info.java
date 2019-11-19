@@ -3,5 +3,5 @@ open module scenebuilder {
   requires javafx.graphics;
   requires javafx.fxml;
     requires java.sql;
-    exports ehu.isad;
+    exports main.java.ehu.isad;
 }
