@@ -21,9 +21,9 @@ public class Main extends Application {
 
   private main.java.ehu.isad.controller.ui.UI1Kud UI1Kud;
   private main.java.ehu.isad.controller.ui.UI2Kud UI2Kud;
-  private main.java.ehu.isad.controller.ui.UI2Kud UI3Kud;
-  private main.java.ehu.isad.controller.ui.UI2Kud UI4Kud;
-  private main.java.ehu.isad.controller.ui.UI2Kud UI5Kud;
+  private main.java.ehu.isad.controller.ui.UI3Kud UI3Kud;
+  private main.java.ehu.isad.controller.ui.UI4Kud UI4Kud;
+  private main.java.ehu.isad.controller.ui.UI5Kud UI5Kud;
 
 
   @Override

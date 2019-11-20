@@ -17,21 +17,21 @@ public class EzarpenakDBKud {
 
     private EzarpenakDBKud(){}
 
-    public List<ehu.isad.model.Ordezkaritza> lortuEzarpenak(){
-        List<ehu.isad.model.Ordezkaritza> emaitza = new ArrayList<>();
+    public List<main.java.ehu.isad.model.Ordezkaritza> lortuEzarpenak(){
+        List<main.java.ehu.isad.model.Ordezkaritza> emaitza = new ArrayList<>();
         try {
             //Declare a SELECT statement
             String selectStmt = "SELECT * FROM properties";
 
-            ResultSet rs = DBKudeatzaile.getInstantzia().execSQL(selectStmt);
+            ResultSet rs = main.java.ehu.isad.controller.db.DBKudeatzaile.getInstantzia().execSQL(selectStmt);
 
             while (rs.next()) {
 
-                Integer useridLag = rs.getInt("userid");
-                String keyLag = rs.getString("key");
-                String valueLag = rs.getString("value");
+                String herrialdeLag = rs.getString("herrialdea");
+                String artistaLag = rs.getString("artista");
+                String abestiLag = rs.getString("abestia");
 
-                emaitza.add(new ehu.isad.model.Ordezkaritza(useridLag,keyLag,valueLag));
+                emaitza.add(new main.java.ehu.isad.model.Ordezkaritza(herrialdeLag,artistaLag,abestiLag));
             }
 
         } catch (SQLException ex) {

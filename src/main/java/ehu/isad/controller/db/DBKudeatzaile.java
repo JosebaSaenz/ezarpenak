@@ -1,4 +1,4 @@
-package main.java.ehu.isad.controller.db;
+package ehu.isad.controller.db;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;

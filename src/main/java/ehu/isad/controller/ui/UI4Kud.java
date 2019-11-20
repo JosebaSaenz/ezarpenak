@@ -1,5 +1,6 @@
-package main.java.ehu.isad.controller.ui;
+package ehu.isad.controller.ui;
 
+import ehu.isad.controller.db.DBKudeatzaile;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,12 +22,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
-import main.java.ehu.isad.controller.db.DBKudeatzaile;
-import main.java.ehu.isad.model.Ordezkaritza;
+import ehu.isad.controller.db.DBKudeatzaile;
+import ehu.isad.model.Ordezkaritza;
 
 import java.io.File;
 import java.net.URL;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class UI4Kud implements Initializable {
@@ -61,7 +63,7 @@ public class UI4Kud implements Initializable {
 
     }
 
-    public void hasieratu(String herrialde){
+    public void hasieratu(String herrialde) throws SQLException {
         bandera.setImage(new Image("banderak" + File.pathSeparatorChar + herrialde.toLowerCase() + ".png"));
         mezua.setText(herrialde + "k horrela nahi ditu bere puntuak banatu:");
 
@@ -73,7 +75,7 @@ public class UI4Kud implements Initializable {
         zutabeakPrestatu(table);
 
         // Display row data
-        //zerrenda = getOrdezkaritzak(); TODO (metodoa komentatuta)
+        zerrenda = getOrdezkaritzak();
         table.setItems(zerrenda);
 
         // taula panelan sartu
@@ -94,14 +96,19 @@ public class UI4Kud implements Initializable {
         abestia.setCellValueFactory(new PropertyValueFactory<>("Abestia"));
     }
 
-    private ObservableList<Ordezkaritza> getOrdezkaritzak() { //TODO datu-basetik ordezkaritzak lortu
+    private ObservableList<Ordezkaritza> getOrdezkaritzak() throws SQLException { //TODO datu-basetik ordezkaritzak lortu
 
         ResultSet rs = DBKudeatzaile.getInstantzia().execSQL("Select herrialdea, artista, abestia from Ordezkaritza");
+        ObservableList<Ordezkaritza> list = FXCollections.observableArrayList();
 
-        String rs2 = rs.toString();
-        // TODO String.split() erabiliz emaitzak banandu
+        while(rs.next()){
+            String herrialdea = rs.getString("herrialdea");
+            String artista = rs.getString("artista");
+            String abestia = rs.getString("abestia");
+            Ordezkaritza o = new Ordezkaritza(herrialdea,artista,abestia);
+            list.add(o);
+        }
 
-        ObservableList<Ordezkaritza> list = FXCollections.observableArrayList(user1, user2, user3);
         return list;
     }
 
